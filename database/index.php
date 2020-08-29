@@ -26,6 +26,7 @@
             <th>性別</th>
             <th>電話</th>
             <th>MAIL</th>
+            <th></th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
             <tr>
@@ -34,6 +35,11 @@
                 <td><?php echo $row["gender"];?></td>
                 <td><?php echo $row["phone"];?></td>
                 <td><?php echo $row["mail"];?></td>
+                <td>
+                    <form action="delete.php" method="post">
+                        <input type="submit" value="刪除">
+                    </form>
+                </td>
             </tr>
         <?php } ?>
 

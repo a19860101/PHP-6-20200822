@@ -7,3 +7,5 @@
     $gender =$_POST["gender"];
     $sql = "INSERT INTO students(name,phone,mail,gender)VALUES('$name','$phone','$mail','$gender')";
     mysqli_query($conn,$sql);
+
+    header("location:index.php");
