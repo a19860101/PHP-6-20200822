@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>新增學員資料</h1>
-    <form action="" method="post">
+    <form action="store.php" method="post">
         <div>
             <label for="name"">姓名</label>
             <input type="text" name="name" id="name">
