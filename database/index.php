@@ -38,8 +38,9 @@
                 <td>
                     <form action="delete.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $row["id"];?>">
-                        <input type="submit" value="刪除">
+                        <input type="submit" value="刪除" onclick="return confirm('確認刪除？')">
                     </form>
+                    <a href="edit.php?id=<?php echo $row["id"]?>">編輯</a>
                 </td>
             </tr>
         <?php } ?>
