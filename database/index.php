@@ -14,10 +14,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>學員資料表</title>
 </head>
 <body>
     <h1>學員資料</h1>
+    <a href="create.php">新增學員資料</a>
     <table border="1" width="600">
         <tr>
             <th>#</th>
