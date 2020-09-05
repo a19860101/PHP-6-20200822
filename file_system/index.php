@@ -17,6 +17,7 @@
             foreach($imgs as $img){
         ?>
         <img src="<?php echo $img; ?>" width="200">
+        <a href="delete.php?img=<?php echo $img; ?>" onclick="return confirm('確認刪除？')">刪除</a>
         <?php } ?>
     </div>
 </body>
