@@ -26,6 +26,15 @@
             echo $e->getMessage();
         }
     }
-    function store(){}
+    function store($name,$phone,$mail,$gender){
+        try {
+            require_once("pdo.php");
+            $sql = "INSERT INTO students(name,phone,mail,gender,create_at)VALUES(?,?,?,?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$name,$phone,$mail,$gender,$now]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     function delete(){}
     function update(){}
