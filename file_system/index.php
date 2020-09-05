@@ -10,5 +10,14 @@
         <input type="file" name="img">
         <input type="submit" value="檔案上傳">
     </form>
+    <div>
+        <?php
+            $imgs = glob("images/*");
+            // var_dump($imgs);
+            foreach($imgs as $img){
+        ?>
+        <img src="<?php echo $img; ?>" width="200">
+        <?php } ?>
+    </div>
 </body>
 </html>
