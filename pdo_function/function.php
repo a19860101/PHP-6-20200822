@@ -56,3 +56,28 @@
             echo $e->getMessage();
         }
     }
+    function storeTest($request,$time){
+        require_once("pdo.php");
+        if($time === 1){
+            $request["create_at"] = $now;
+        }
+        // var_dump($request);
+        $key = implode(",",array_keys($request));
+        $value = array_values($request);
+        function q(){
+            return '?';
+        }
+        $q = implode(",",array_map('q',$request));
+        
+        var_dump($q);
+
+
+
+        try {
+            $sql = "INSERT INTO students({$key})VALUES({$q})";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute($value);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }

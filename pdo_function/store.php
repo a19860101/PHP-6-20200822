@@ -6,5 +6,6 @@
     $gender =$_POST["gender"];
 
     store($name,$phone,$mail,$gender);
-    
-    header("location:index.php");
+    // $time = 1;
+    // storeTest($_REQUEST,$time);
+    // header("location:index.php");
