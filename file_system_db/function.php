@@ -1,4 +1,16 @@
 <?php 
+    function showAll(){
+        require_once("pdo.php");
+        $sql = "SELECT * FROM photos";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $rows = array();
+        while($row = $stmt->fetch()){
+            $rows[] = $row;
+        }
+        return $rows;
+
+    }
     function store($path,$title){
         require_once("pdo.php");
         $sql = "INSERT INTO photos(path,title,create_at)VALUES(?,?,?)";

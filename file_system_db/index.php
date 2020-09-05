@@ -1,3 +1,7 @@
+<?php
+    include("function.php");
+    $rows = showAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +20,11 @@
         </div>
         <input type="submit" value="檔案上傳">
     </form>
-
-    <div>
-        
-    </div>
+    <?php foreach($rows as $row){ ?>
+        <div>
+            <img src="images/<?php echo $row["path"];?>" width="200">
+            <h2><?php echo $row["title"];?></h2>
+        </div>
+    <?php } ?>
 </body>
 </html>
