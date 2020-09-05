@@ -24,6 +24,11 @@
         <div>
             <img src="images/<?php echo $row["path"];?>" width="200">
             <h2><?php echo $row["title"];?></h2>
+            <form action="delete.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+                <input type="hidden" name="path" value="<?php echo $row["path"];?>">
+                <input type="submit" value="刪除">
+            </form>
         </div>
     <?php } ?>
 </body>

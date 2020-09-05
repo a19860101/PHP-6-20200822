@@ -1,5 +1,6 @@
 <?php
-    $img = $_GET["img"];
-    unlink($img);
+    include("function.php");
+
+    delete($_POST["id"],$_POST["path"]);
+
     header("location:index.php");
-    

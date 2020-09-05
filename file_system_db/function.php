@@ -52,3 +52,11 @@
             echo "上傳錯誤";
         }
     }
+    function delete($id,$path){
+        require_once("pdo.php");
+        unlink("images/{$path}");
+
+        $sql = "DELETE FROM photos WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }
