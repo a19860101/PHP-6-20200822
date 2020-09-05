@@ -3,12 +3,13 @@
     $phone = $_POST["phone"];
     $mail = $_POST["mail"];
     $gender =$_POST["gender"];
+    $now = date("Y-m-d H:i:s");
 
     try {
         require_once("pdo.php");
-        $sql = "INSERT INTO students(name,phone,mail,gender)VALUES(?,?,?,?)";
+        $sql = "INSERT INTO students(name,phone,mail,gender,create_at)VALUES(?,?,?,?,?)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$name,$phone,$mail,$gender]);
+        $stmt->execute([$name,$phone,$mail,$gender,$now]);
     }catch(PDOException $e){
         echo $e->getMessage();
     }

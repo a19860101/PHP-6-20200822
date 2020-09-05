@@ -28,6 +28,7 @@
             <th>性別</th>
             <th>電話</th>
             <th>MAIL</th>
+            <th>建立時間</th>
             <th></th>
         </tr>
         <?php while($row = $stmt->fetch()){ ?>
@@ -37,6 +38,7 @@
                 <td><?php echo $row["gender"];?></td>
                 <td><?php echo $row["phone"];?></td>
                 <td><?php echo $row["mail"];?></td>
+                <td><?php echo $row["create_at"];?></td>
                 <td>
                     <form action="delete.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $row["id"];?>">
