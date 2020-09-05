@@ -1,18 +1,35 @@
 <?php
     // var_dump($_FILES);
     // var_dump($_FILES["img"]);
-    $name = $_FILES["img"]["name"];
+    // $name = $_FILES["img"]["name"];
     $type = $_FILES["img"]["type"];
     $tmp_name = $_FILES["img"]["tmp_name"];
     $error = $_FILES["img"]["error"];
     $size = $_FILES["img"]["size"];
 
-    $target = "images/{$name}";
+ 
+    // $target = "images/{$name}";
 
-    if($type != "image/jpeg" && $type != "image/png" && $type != "image/gif"){
-        echo "檔案類型不正確";
-        return;
+    // if($type != "image/jpeg" && $type != "image/png" && $type != "image/gif"){
+    //     echo "檔案類型不正確";
+    //     return;
+    // }
+    $name = md5(time());
+    switch($type){
+        case "image/jpeg":
+            $name = md5(time()).".jpg";
+        break;
+        case "image/png":
+            $name = md5(time()).".png";
+        break;
+        case "image/gif":
+            $name = md5(time()).".gif";
+        break;
+        default:
+            echo "檔案類型不正確";
+            return;
     }
+    $target = "images/{$name}";
 
     if($error === 0){
         if(move_uploaded_file($tmp_name,$target)){
