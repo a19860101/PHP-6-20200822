@@ -46,4 +46,13 @@
             echo $e->getMessage();
         }
     }
-    function update(){}
+    function update($name,$phone,$mail,$gender,$id){ 
+        try {
+            require_once("pdo.php");
+            $sql = "UPDATE students SET name=?,phone=?,mail=?,gender=? WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$name,$phone,$mail,$gender,$id]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
