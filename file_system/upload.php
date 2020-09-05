@@ -9,8 +9,19 @@
 
     $target = "images/{$name}";
 
+    if($type != "image/jpeg" && $type != "image/png" && $type != "image/gif"){
+        echo "檔案類型不正確";
+        return;
+    }
+
     if($error === 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo  "上傳成功";
+        }else{
+            echo "上傳失敗";
         }
+    }elseif($error === 4){
+        echo "請選擇檔案";
+    }else{
+        echo "上傳錯誤";
     }
