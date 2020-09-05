@@ -1,7 +1,6 @@
 <?php
     include("function.php");
-    $row = showAll();
-    var_dump($row);
+    $rows = showAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +12,7 @@
 <body>
     <h1>學員資料</h1>
     <a href="create.php">新增學員資料</a>
-    <table border="1" width="600">
+    <table border="1" width="800">
         <tr>
             <th>#</th>
             <th>姓名</th>
@@ -23,7 +22,7 @@
             <th>建立時間</th>
             <th></th>
         </tr>
-        <?php while($row = $stmt->fetch()){ ?>
+        <?php foreach($rows as $row){ ?>
             <tr>
                 <td><?php echo $row["id"];?></td>
                 <td><?php echo $row["name"];?></td>
