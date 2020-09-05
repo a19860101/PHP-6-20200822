@@ -7,18 +7,18 @@
 </head>
 <body>
 <form action="upload.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="img">
+        <div>
+            <label for="title">圖片標題</label>
+            <input type="text" name="title">
+        </div>
+        <div>
+            <input type="file" name="img">
+        </div>
         <input type="submit" value="檔案上傳">
     </form>
+
     <div>
-        <?php
-            $imgs = glob("images/*");
-            // var_dump($imgs);
-            foreach($imgs as $img){
-        ?>
-        <img src="<?php echo $img; ?>" width="200">
-        <a href="delete.php?img=<?php echo $img; ?>" onclick="return confirm('確認刪除？')">刪除</a>
-        <?php } ?>
+        
     </div>
 </body>
 </html>
