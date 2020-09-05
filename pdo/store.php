@@ -3,6 +3,8 @@
     $phone = $_POST["phone"];
     $mail = $_POST["mail"];
     $gender =$_POST["gender"];
+
+    date_default_timezone_set("Asia/Taipei");
     $now = date("Y-m-d H:i:s");
 
     try {
