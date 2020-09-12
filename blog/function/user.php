@@ -1,6 +1,9 @@
 <?php
     function auth($user,$pw){
         try{
+            if(empty($user) || empty($pw)){
+                return 2;
+            }
             require("pdo.php");
             session_start();
             $sql = "SELECT * FROM users WHERE user = ?";
@@ -9,11 +12,12 @@
             $row = $stmt -> fetch(PDO::FETCH_ASSOC);
             if($row["pw"] === $pw){
                 $_SESSION["AUTH"] = $row;
+                return 0;
             }else{
-                echo "帳號或密碼錯誤";
+                return 1;
             }
         }catch(PDOException $e){
-            echo $e->getMessage();
+            return $e->getMessage();
         }
     }
     function logout(){
