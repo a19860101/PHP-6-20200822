@@ -20,9 +20,5 @@
         </div>
         <?php } ?>
     </div>
-            <?php 
-                session_start();
-                var_dump($_SESSION["AUTH"]);
-            ?>
 </div>
 <?php include("template/footer.php"); ?>

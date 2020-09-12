@@ -6,7 +6,7 @@
             $sql = "SELECT * FROM users WHERE user = ?";
             $stmt = $pdo->prepare($sql);
             $stmt -> execute([$user]);
-            $row = $stmt -> fetch();
+            $row = $stmt -> fetch(PDO::FETCH_ASSOC);
             if($row["pw"] === $pw){
                 $_SESSION["AUTH"] = $row;
             }else{
@@ -15,4 +15,8 @@
         }catch(PDOException $e){
             echo $e->getMessage();
         }
+    }
+    function logout(){
+        session_start();
+        unset($_SESSION["AUTH"]);
     }
