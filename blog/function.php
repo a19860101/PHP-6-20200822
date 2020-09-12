@@ -17,7 +17,7 @@
     function show($id){
         try {
             require_once("pdo.php");
-            $sql = "SELECT * FROM students WHERE id = ?";
+            $sql = "SELECT * FROM posts WHERE id = ?";
             $stmt = $pdo->prepare($sql);
             $stmt ->execute([$id]);
             $row = $stmt->fetch();

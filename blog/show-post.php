@@ -1,25 +1,20 @@
 <?php
     include("function.php");
-    $rows = showAll();
+    $row = show($_GET["id"]);
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
 <div class="container py-4">
     <div class="row justify-content-center">
-        <?php foreach($rows as $row){ ?>
-        <div class="col-8 py-3">
+        <div class="col-8">
             <h2><?php echo $row["title"];?></h2>
             <div class="content">
-                <?php echo $row["content"]; ?>
+                <?php echo $row["content"];?>
             </div>
-            <a href="show-post.php?id=<?php echo $row["id"];?>" class="btn btn-primary">繼續閱讀...</a>
             <div>
-                建立時間 <?php echo $row["create_at"]; ?>
+                建立時間 <?php echo $row["create_at"];?>
             </div>
-            <hr>
         </div>
-        <?php } ?>
     </div>
-
 </div>
 <?php include("template/footer.php"); ?>
