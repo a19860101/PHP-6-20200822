@@ -14,6 +14,9 @@
             <div>
                 建立時間 <?php echo $row["create_at"];?>
             </div>
+            <div>
+                修改時間 <?php echo $row["update_at"]; ?>
+            </div>
             <a href="index.php" class="btn btn-primary">文章列表</a>
             <form action="delete-post.php" method="post" class="d-inline-block">
                 <input type="hidden" name="id" value="<?php echo $row["id"];?>">

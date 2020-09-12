@@ -18,8 +18,12 @@
                     <label for="content">文章內容</label>
                     <textarea name="content" id="content" rows="10" class="form-control"><?php echo $row["content"];?></textarea>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                 <input type="submit" class="btn btn-primary" value="儲存文章">
+                
             </form>
+            <br>
+            <a href="index.php" class="btn btn-info">文章列表</a>
         </div>
     </div>
 </div>

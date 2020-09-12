@@ -46,12 +46,12 @@
             echo $e->getMessage();
         }
     }
-    function update($name,$phone,$mail,$gender,$id){ 
+    function update($title,$content,$id){ 
         try {
             require_once("pdo.php");
-            $sql = "UPDATE students SET name=?,phone=?,mail=?,gender=? WHERE id = ?";
+            $sql = "UPDATE posts SET title=?,content=?,update_at=? WHERE id = ?";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$name,$phone,$mail,$gender,$id]);
+            $stmt->execute([$title,$content,$now,$id]);
         }catch(PDOException $e){
             echo $e->getMessage();
         }
