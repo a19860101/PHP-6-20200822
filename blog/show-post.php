@@ -19,7 +19,7 @@
                 <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                 <input type="submit" class="btn btn-danger" value="刪除文章" onclick="return confirm('確認刪除？')">
             </form>
-            <a href="edit-post.php" class="btn btn-success">編輯文章</a>
+            <a href="edit-post.php?id=<?php echo $row["id"];?>" class="btn btn-success">編輯文章</a>
         </div>
     </div>
 </div>
