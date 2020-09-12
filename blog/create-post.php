@@ -5,7 +5,7 @@
         <div class="col-8">
             <h2>新增文章</h2>
             <hr>
-            <form action="" method="post">
+            <form action="store-post.php" method="post">
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control">
