@@ -7,7 +7,7 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <?php foreach($rows as $row){ ?>
-        <div class="col-8 py-3">
+        <div class="col-lg-8 col-12 py-3">
             <h2><?php echo $row["title"];?></h2>
             <div class="content py-2">
                 <?php echo strip_tags(mb_substr($row["content"],0,100,"utf-8")); ?>
