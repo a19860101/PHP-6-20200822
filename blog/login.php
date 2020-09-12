@@ -3,7 +3,7 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <form action="" method="post">
+            <form action="auth.php" method="post">
                 <div class="form-group">
                     <label for="user">帳號</label>
                     <input type="text" name="user" id="user" class="form-control">
