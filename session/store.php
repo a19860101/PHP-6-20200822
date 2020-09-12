@@ -6,4 +6,6 @@
     // var_dump($_POST);
     $_SESSION["PROFILE"] = $_POST;
 
+    $_SESSION["TEST"] = $_POST;
+
     header("location:index.php");

@@ -18,6 +18,8 @@
         <br>
         <input type="submit" value="新增session">
     </form>
+    <a href="delete.php">delete</a>
+    <br>
     <?php
         session_start();
         if($_SESSION){
@@ -29,7 +31,13 @@
             echo $_SESSION["PROFILE"]["user"];
             echo $_SESSION["PROFILE"]["mail"];
             echo $_SESSION["PROFILE"]["phone"];
+            echo "<br>";
+            echo $_SESSION["TEST"]["user"];
+            echo $_SESSION["TEST"]["mail"];
+            echo $_SESSION["TEST"]["phone"];
 
+        }else{
+            echo "Session 已刪除";
         }
     ?>
 </body>
