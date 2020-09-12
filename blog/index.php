@@ -9,8 +9,8 @@
         <?php foreach($rows as $row){ ?>
         <div class="col-8 py-3">
             <h2><?php echo $row["title"];?></h2>
-            <div class="content">
-                <?php echo $row["content"]; ?>
+            <div class="content py-2">
+                <?php echo strip_tags(mb_substr($row["content"],0,100,"utf-8")); ?>
             </div>
             <a href="show-post.php?id=<?php echo $row["id"];?>" class="btn btn-primary">繼續閱讀...</a>
             <div>
