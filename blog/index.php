@@ -4,7 +4,7 @@
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
-<div class="container">
+<div class="container py-4">
     <div class="row justify-content-center">
         <?php foreach($rows as $row){ ?>
         <div class="col-8">
