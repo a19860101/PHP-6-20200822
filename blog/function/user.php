@@ -24,3 +24,13 @@
         session_start();
         unset($_SESSION["AUTH"]);
     }
+    function register($user,$pw){
+        try {
+            require_once("pdo.php");
+            $sql = "INSERT INTO users(user,pw,create_at)VALUES(?,?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$user,$pw,$now]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }

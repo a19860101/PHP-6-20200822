@@ -20,10 +20,13 @@
                 <a class="nav-link" href="login.php"">登入</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">申請</a>
+                <a class="nav-link" href="register.php">申請</a>
             </li>
             <?php }?>
             <?php if($_SESSION && $_SESSION["AUTH"]){ ?>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><?php echo $_SESSION["AUTH"]["user"]?></a>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="logout.php">登出</a>
             </li>
