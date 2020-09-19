@@ -4,7 +4,7 @@
 
     $row = show($_GET["id"]);
 
-    $categories = showAllCategory();
+     $categories = showAllCategory();
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
@@ -22,7 +22,7 @@
                     <label for="category_id">文章分類</label>
                     <select name="category_id" id="category_id" class="form-control">
                         <?php foreach($categories as $category){ ?>
-                        <option value="<?php echo $category["id"];?>"><?php echo $category["title"];?></option>
+                        <option value="<?php echo $category["id"];?>" <?php echo $category["id"] === $row["category_id"] ? "selected":""; ?>><?php echo $category["title"];?></option>
                         <?php } ?>
                     </select>
                 </div>
