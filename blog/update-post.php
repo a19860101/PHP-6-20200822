@@ -7,8 +7,13 @@
 
     if($_FILES["cover"]["name"]){
         $cover = uploadImg($_FILES["cover"]);
+        // echo 1;
+    }else if($_POST["cover"]){
+        $cover = $_POST["cover"];
+        // echo 2;
     }else{
         $cover = "";
+        // echo 3;
     }
     update($title,$cover,$content,$category_id,$id);
 
