@@ -23,11 +23,13 @@
                 修改時間 <?php echo $row["update_at"]; ?>
             </div>
             <a href="index.php" class="btn btn-primary">文章列表</a>
+            <?php if($_SESSION && $_SESSION["AUTH"]["id"] === $row["user_id"]){ ?>
             <form action="delete-post.php" method="post" class="d-inline-block">
                 <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                 <input type="submit" class="btn btn-danger" value="刪除文章" onclick="return confirm('確認刪除？')">
             </form>
             <a href="edit-post.php?id=<?php echo $row["id"];?>" class="btn btn-success">編輯文章</a>
+            <?php } ?>
         </div>
     </div>
 </div>
