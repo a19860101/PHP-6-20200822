@@ -12,4 +12,4 @@
     }
     update($title,$cover,$content,$category_id,$id);
 
-    // header("location:edit-post.php?id=".$id);
+    header("location:edit-post.php?id=".$id);
