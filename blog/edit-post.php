@@ -13,10 +13,18 @@
         <div class="col-8">
             <h2>編輯文章</h2>
             <hr>
-            <form action="update-post.php" method="post">
+            <form action="update-post.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control" value="<?php echo $row["title"];?>">
+                </div>
+                <div class="form-group">
+                    <?php if($row["cover"]){ ?>
+                        <img src="thumbs/<?php echo $row["cover"];?>" width="200">
+                        <a href="delete_cover.php">刪除</a>
+                    <?php }else{ ?>
+                        <input type="file" name="cover" id="cover">
+                    <?php } ?>
                 </div>
                 <div class="form-group">
                     <label for="category_id">文章分類</label>
