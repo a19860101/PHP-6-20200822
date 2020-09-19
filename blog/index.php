@@ -8,7 +8,11 @@
     <div class="row justify-content-center">
         <?php foreach($rows as $row){ ?>
         <div class="col-lg-8 col-12 py-3">
+            <?php if($row["cover"] === ""){ ?>
+            <img src="https://via.placeholder.com/600x300?text=No+Cover" class="w-100">
+            <?php }else{ ?>
             <img src="thumbs/<?php echo $row["cover"];?>" class="w-100">
+            <?php } ?>
             <h2><?php echo $row["title"];?></h2>
             <div>作者:<?php echo $row["user"];?></div>
             <div>分類:<?php echo $row["category_title"];?></div>

@@ -7,6 +7,11 @@
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-8">
+            <?php if($row["cover"] === ""){ ?>
+                <img src="https://via.placeholder.com/600x300?text=No+Cover" class="w-100">
+                <?php }else{ ?>
+                <img src="thumbs/<?php echo $row["cover"];?>" class="w-100">
+            <?php } ?>
             <h2><?php echo $row["title"];?></h2>
             <div class="content">
                 <?php echo $row["content"];?>
