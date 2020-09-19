@@ -8,6 +8,7 @@
     <div class="row justify-content-center">
         <?php foreach($rows as $row){ ?>
         <div class="col-lg-8 col-12 py-3">
+            <img src="thumbs/<?php echo $row["cover"];?>" class="w-100">
             <h2><?php echo $row["title"];?></h2>
             <div>作者:<?php echo $row["user"];?></div>
             <div>分類:<?php echo $row["category_title"];?></div>

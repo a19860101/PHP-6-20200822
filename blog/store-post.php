@@ -6,7 +6,13 @@
     $category_id = $_POST["category_id"];
     $user_id = $_SESSION["AUTH"]["id"];
 
-    $cover = uploadImg($_FILES["cover"]);
+    if($_FILES["cover"]["name"]){
+        $cover = uploadImg($_FILES["cover"]);
+    }else{
+        $cover = "";
+    }
+
+    // 
 
     store($title,$cover,$content,$category_id,$user_id);
 
