@@ -2,7 +2,10 @@
     function showAll(){
         try {
             require_once("pdo.php");
-            $sql = "SELECT * FROM posts ORDER BY id DESC";
+            // $sql = "SELECT * FROM posts ORDER BY id DESC";
+            $sql = "SELECT posts.* , users.user FROM posts
+                    LEFT JOIN users ON posts.user_id = users.id
+                    ORDER BY id DESC"; 
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $rows = array();
