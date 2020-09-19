@@ -29,12 +29,12 @@
             echo $e->getMessage();
         }
     }
-    function store($title,$content,$user_id){
+    function store($title,$content,$category_id,$user_id){
         try {
             require_once("pdo.php");
-            $sql = "INSERT INTO posts(title,content,user_id,create_at,update_at)VALUES(?,?,?,?,?)";
+            $sql = "INSERT INTO posts(title,content,category_id,user_id,create_at,update_at)VALUES(?,?,?,?,?,?)";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$title,$content,$user_id,$now,$now]);
+            $stmt->execute([$title,$content,$category_id,$user_id,$now,$now]);
         }catch(PDOException $e){
             echo $e->getMessage();
         }
