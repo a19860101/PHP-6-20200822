@@ -3,8 +3,10 @@
         try {
             require_once("pdo.php");
             // $sql = "SELECT * FROM posts ORDER BY id DESC";
-            $sql = "SELECT posts.* , users.user FROM posts
+            //別名
+            $sql = "SELECT posts.* , users.user ,categories.title AS category_title FROM posts
                     LEFT JOIN users ON posts.user_id = users.id
+                    LEFT JOIN categories ON posts.category_id = categories.id
                     ORDER BY id DESC"; 
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
