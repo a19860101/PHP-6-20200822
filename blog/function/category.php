@@ -25,3 +25,14 @@
             echo $e->getMessage();
         }
     }
+    function deleteCategory($id){
+        try {
+            require_once("pdo.php");
+            $sql = "DELETE FROM categories WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$id]);
+            
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }

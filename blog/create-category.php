@@ -26,7 +26,13 @@
             <hr>
             <ul class="list-group">
                 <?php foreach($rows as $row){ ?>
-                <li class="list-group-item"><?php echo $row["title"];?></li>
+                <li class="list-group-item">
+                    <?php echo $row["title"];?>
+                    <form action="delete-category.php" method="post" class="float-right">
+                        <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+                        <input type="submit" class="btn btn-danger btn-sm" value="刪除" onclick="return confirm('確認刪除？')">
+                    </form>
+                </li>
                 <?php } ?>
             </ul>
         </div>
