@@ -12,15 +12,17 @@
             <li class="nav-item active">
                 <a class="nav-link" href="create-post.php">新增文章</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="create-category.php">新增分類</a>
-            </li>
+                <?php if($_SESSION["AUTH"]["level"] == 0){ ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="create-category.php">新增分類</a>
+                </li>
+                <?php } ?>
             <?php } ?>
         </ul>
         <ul class="navbar-nav ml-auto">
             <?php if(!$_SESSION || !$_SESSION["AUTH"] ){ ?>
             <li class="nav-item active">
-                <a class="nav-link" href="login.php"">登入</a>
+                <a class="nav-link" href="login.php">登入</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="register.php">申請</a>

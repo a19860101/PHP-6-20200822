@@ -19,6 +19,25 @@
             echo $e->getMessage();
         }
     }
+    function showPostsWithCategory($id){
+        try {
+            require_once("pdo.php");
+            $sql = "SELECT posts.* , users.user ,categories.title AS category_title FROM posts
+                    LEFT JOIN users ON posts.user_id = users.id
+                    LEFT JOIN categories ON posts.category_id = categories.id
+                    WHERE posts.category_id = ?
+                    ORDER BY id DESC"; 
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$id]);
+            $rows = array();
+            while($row = $stmt->fetch()){
+                $rows[] = $row;
+            }
+            return $rows;
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
     function show($id){
         try {
             require_once("pdo.php");
