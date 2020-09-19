@@ -5,7 +5,7 @@
         <div class="col-8">
             <h2>新增分類</h2>
             <hr>
-            <form action="" method="post">
+            <form action="store-category.php" method="post">
                 <div class="form-group">
                     <label for="title">分類標題</label>
                     <input type="text" name="title" id="title" class="form-control">
