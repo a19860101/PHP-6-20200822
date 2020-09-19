@@ -1,9 +1,14 @@
 <?php
     include("function/category.php");
+    include("function/user.php");
     $rows = showAllCategory();
+    
 ?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
+<?php
+    access_denied();
+?>
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-8">

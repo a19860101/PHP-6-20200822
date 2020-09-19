@@ -45,3 +45,8 @@
             echo $e->getMessage();
         }
     }
+    function access_denied(){
+        if(!$_SESSION){
+            header("location:index.php");
+        }
+    }
