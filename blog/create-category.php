@@ -1,7 +1,11 @@
+<?php
+    include("function/category.php");
+    $rows = showAllCategory();
+?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
 <div class="container py-4">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-8">
             <h2>新增分類</h2>
             <hr>
@@ -16,6 +20,15 @@
                 </div>
                 <input type="submit" class="btn btn-primary" value="新增分類">
             </form>
+        </div>
+        <div class="col-4">
+            <h2>分類列表</h2>
+            <hr>
+            <ul class="list-group">
+                <?php foreach($rows as $row){ ?>
+                <li class="list-group-item"><?php echo $row["title"];?></li>
+                <?php } ?>
+            </ul>
         </div>
     </div>
 </div>

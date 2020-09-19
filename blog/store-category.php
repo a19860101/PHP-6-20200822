@@ -4,4 +4,4 @@
     $slug = $_POST["slug"];
     storeCategory($title,$slug);
 
-    header("location:index.php");
+    header("location:create-category.php");
