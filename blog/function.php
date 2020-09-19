@@ -51,12 +51,12 @@
             echo $e->getMessage();
         }
     }
-    function update($title,$content,$category_id,$id){ 
+    function update($title,$cover,$content,$category_id,$id){ 
         try {
             require_once("pdo.php");
-            $sql = "UPDATE posts SET title=?,content=?,category_id=?,update_at=? WHERE id = ?";
+            $sql = "UPDATE posts SET title=?,cover=?,content=?,category_id=?,update_at=? WHERE id = ?";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$title,$content,$category_id,$now,$id]);
+            $stmt->execute([$title,$cover,$content,$category_id,$now,$id]);
         }catch(PDOException $e){
             echo $e->getMessage();
         }
