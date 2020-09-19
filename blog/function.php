@@ -122,3 +122,13 @@
         imagegif($new_canvas,"thumbs/".$name);
 
     }
+    function deleteCover($id,$cover){
+        try {
+            require("pdo.php");
+            $sql = "UPDATE posts SET cover = ?,update_at = ? WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$cover,$now,$id]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }

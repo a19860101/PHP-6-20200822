@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <?php if($row["cover"]){ ?>
                         <img src="thumbs/<?php echo $row["cover"];?>" width="200">
-                        <a href="delete_cover.php">刪除</a>
+                        <a href="delete_cover.php?id=<?php echo $row["id"];?>&cover=<?php echo $row["cover"];?>">刪除</a>
                         <input type="hidden" name="cover" value="<?php echo $row["cover"];?>">
                     <?php }else{ ?>
                         <input type="file" name="cover" id="cover">
