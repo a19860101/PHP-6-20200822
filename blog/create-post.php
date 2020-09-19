@@ -1,3 +1,7 @@
+<?php
+    include("function/category.php");
+    $rows = showAllCategory();
+?>
 <?php include("template/header.php"); ?>
 <?php include("template/nav.php"); ?>
 <div class="container py-4">
@@ -9,6 +13,14 @@
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="category_id">分類</label>
+                    <select name="category_id" id="category_id" class="form-control">
+                        <?php foreach($rows as $row){ ?>
+                        <option value="<?php echo $row["id"]?>"><?php echo $row["title"]?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="content">文章內容</label>
