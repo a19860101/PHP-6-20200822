@@ -1,7 +1,7 @@
 <?php
     function showAllCategory(){
         try {
-            require_once("pdo.php");
+            require("pdo.php");
             $sql = "SELECT * FROM categories";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
