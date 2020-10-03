@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Post</h1>
+    <h1>Post {{$id}}</h1>
 </body>
 </html>
