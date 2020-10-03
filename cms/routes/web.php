@@ -14,17 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('post/{id}/{num}', function($id,$num){
-    // return view('post',['id' => $id , 'num' => $num]);
-    // return view('post')->with(['id' => $id , 'num' => $num]);
-    // return view('post')->with(['id' => $id]);
-    // return view('post',compact('id','num'));
-// });
-Route::get('post', 'PostController@show');
-Route::get('post/{id}', 'PostController@detail');
-Route::get('about', function(){
-    return view('about');
-});
-Route::get('contact', function(){
-    return view('contact');
-});
+
