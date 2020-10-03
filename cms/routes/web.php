@@ -18,7 +18,7 @@ Route::get('post/{id}/{num}', function($id,$num){
     // return view('post',['id' => $id , 'num' => $num]);
     // return view('post')->with(['id' => $id , 'num' => $num]);
     // return view('post')->with(['id' => $id]);
-    return view('post',compact('id','num'));
+    // return view('post',compact('id','num'));
 });
 Route::get('about', function(){
     return view('about');
