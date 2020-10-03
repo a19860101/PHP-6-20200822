@@ -1,5 +1,11 @@
 <?php
+
     class Car {
+        //建構子 
+        function __construct(){
+            $user = 'admin';
+            echo $user;
+        }   
         public $color = 'black';
         private $doors = 4;
         //只能在類別內使用，不包括繼承類別
@@ -25,16 +31,20 @@
             return Car::qq();
         }
     }
+    $a = new Car;
+    $b = new Car;
+    $c = new Truck;
+    echo Car::qq();
 
-    $bmw = new Car;
+    // $bmw = new Car;
     // echo $bmw->doors;
     // echo $bmw->wheels;
     // echo $bmw->go();
-    $nissan = new Truck;
+    // $nissan = new Truck;
     // echo $nissan->doors;
     // echo $nissan->color = 'blue';
     // echo $nissan->go();
     // echo $nissan->test();
-    echo $nissan->poiu();
+    // echo $nissan->poiu();
 
 
