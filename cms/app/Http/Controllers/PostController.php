@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     //
-    // php artisan make:controller PostController;
-    function show(){
-        return view('post');
+    function index(){
+        return view('post.index');
     }
-    function detail($id){
-        return view('detail',compact('id'));
+    function create(){
+        return view('post.create');
     }
 }
