@@ -8,5 +8,6 @@
 <body>
     <h1>Post #<?php echo $id; ?></h1>
     <h1>Post #{{ $id }}</h1>
+    <h2>{{$num}}</h2>
 </body>
 </html>
