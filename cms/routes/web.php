@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('post/{id}', function($id){
-    return 'Post #'.$id;
+    return view('post',['id' => $id]);
 });
 Route::get('about', function(){
     return view('about');
