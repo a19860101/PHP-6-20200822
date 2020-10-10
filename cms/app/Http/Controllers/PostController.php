@@ -76,6 +76,12 @@ class PostController extends Controller
     public function show(Post $post)
     {
         //
+        // $post = Post::find($post->id);
+        // $post = Post::findOrFail($post->id);
+        // $post = Post::where('id',$post->id)->first();
+        // return view('post.show',compact('post'));
+
+        return view('post.show',compact('post'));
     }
 
     /**
