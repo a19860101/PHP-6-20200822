@@ -14,7 +14,8 @@ class PostController extends Controller
         return view('post.index',compact('posts'));
     }
     function show($id){
-        return view('post.show',compact('id'));
+        $posts = DB::select('SELECT * FROM posts WHERE id = ?',[$id]);
+        return view('post.show',compact('posts'));
     }
     function create(){
         return view('post.create');

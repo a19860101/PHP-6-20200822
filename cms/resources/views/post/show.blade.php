@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>show #{{$id}}</h1>
+    @foreach($posts as $post)
+    <h1>show #{{$post->id}} {{$post->title}}</h1>
+    <div>
+        {{$post->content}}
+    </div>
+    <div>
+        最後更新時間 {{$post->updated_at}}
+    </div>
+    @endforeach
 </body>
 </html>
