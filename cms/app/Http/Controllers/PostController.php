@@ -39,6 +39,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        DB::table('posts')->insert([
+            'title'     => $request->title,
+            'content'   => $request->content,
+            'created_at'=> now(),
+            'updated_at'=> now()
+        ]);
+        return redirect()->route('post.index');
     }
 
     /**

@@ -1,4 +1,7 @@
 @extends('template.master')
+@section('page-title')
+新增文章
+@endsection
 @section('main')
 <div class="container py-4">
     <div class="row justify-content-center">
