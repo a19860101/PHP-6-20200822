@@ -17,6 +17,13 @@ class PostController extends Controller
         return view('post.create');
     }
     function store(Request $request){
-        return $request;
+        DB::insert('INSERT INTO posts(title, content, created_at, updated_at)VALUES(?,?,?,?)',[
+            $request->title,
+            $request->content,
+            now(),
+            now()
+        ]);
+        // return redirect('post');
+        return redirect(route('post.index'));
     }
 }
