@@ -30,6 +30,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view('post.create');
     }
 
     /**
@@ -41,6 +42,29 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+        //方法一
+        // $post = new Post;
+        // $post->title = $request->title;
+        // $post->content = $request->content;
+        // $post->save();
+
+        //方法二
+        $post = new Post;
+        $post->fill($request->all());
+        // $post->fill([
+        //     'title' => $request->title,
+        //     'content' => $request->content
+        // ]);
+        $post->save();
+
+        //方法三
+        // Post::create([
+            //     'title' => $request->title,
+            //     'content' => $request->content
+        // ]);
+        // Post::create($request->all());
+
+        return redirect()->route('post.index');
     }
 
     /**
