@@ -20,6 +20,8 @@
             <textarea name="content"  cols="30" rows="10">{{$post->content}}</textarea>
         </div>
         <input type="submit" value="更新文章">
+        <input type="button" value="取消" onclick="history.back()">
+
     </form>
     @endforeach
 </body>

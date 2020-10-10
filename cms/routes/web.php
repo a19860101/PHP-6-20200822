@@ -22,3 +22,5 @@ Route::delete('post/{id}','PostController@destroy')->name('post.destroy');
 Route::get('post/edit/{id}','PostController@edit')->name('post.edit');
 Route::put('post/{id}','PostController@update')->name('post.update');
 
+
+
