@@ -93,6 +93,7 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         //
+        return view('post.edit',compact('post'));
     }
 
     /**
@@ -104,7 +105,24 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        //方法一
+        // $post = Post::findOrFail($post->id);
+        // $post->fill([
+        //     'title'     => $request->title,
+        //     'content'   => $request->content,
+        // ]);
+        // $post->save();
+        
+        //方法二
+        // $post = Post::findOrFail($post->id);
+        // $post->fill($request->all());
+        // $post->save();
+        
+        //方法三
+        $post->fill($request->all());
+        $post->save();
+
+        return redirect()->route('post.index');
     }
 
     /**
