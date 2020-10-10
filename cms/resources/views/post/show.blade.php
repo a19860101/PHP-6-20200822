@@ -14,6 +14,11 @@
     <div>
         最後更新時間 {{$post->updated_at}}
     </div>
+    <form action="{{route('post.destroy',['id'=>$post->id])}}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="刪除">
+    </form>
     @endforeach
 </body>
 </html>

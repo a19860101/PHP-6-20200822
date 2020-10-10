@@ -30,4 +30,7 @@ class PostController extends Controller
         // return redirect('post');
         return redirect(route('post.index'));
     }
+    function destroy($id){
+        return $id;
+    }
 }
