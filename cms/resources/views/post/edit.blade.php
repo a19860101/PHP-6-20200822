@@ -8,9 +8,9 @@
 <body>
     <h1>Edit Post</h1>
     @foreach($posts as $post)
-    <form action="" method="post">
+    <form action="{{route('post.update',['id'=>$post->id])}}" method="post">
         @csrf
-        @method('update')
+        @method('put')
         <div>
             <label for="">標題</label>
             <input type="text" name="title" value="{{$post->title}}">

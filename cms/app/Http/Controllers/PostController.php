@@ -38,7 +38,7 @@ class PostController extends Controller
         $posts = DB::select('SELECT * FROM posts WHERE id = ?',[$id]);
         return view('post.edit',compact('posts'));
     }
-    function update($id){
-
+    function update(Request $request, $id){
+        return $id;
     }
 }
