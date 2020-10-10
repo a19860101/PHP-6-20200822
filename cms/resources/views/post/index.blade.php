@@ -15,6 +15,7 @@
     <h2>{{$post->title}}</h2>
     <div>
         {{$post->content}}
+        <a href="{{route('post.show',['id'=>$post->id])}}">繼續閱讀</a>
     </div>
     <div>
         建立時間:{{$post->created_at}}
