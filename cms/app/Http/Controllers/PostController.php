@@ -74,6 +74,8 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        $post = DB::table('posts')->find($id);
+        return view('post.edit',compact('post'));
     }
 
     /**
@@ -86,6 +88,13 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
+        DB::table('posts')->where('id',$id)->update([
+            'title'     =>$request->title,
+            'content'   =>$request->content,
+            'updated_at'=>now()
+        ]);
+        return redirect()->route('post.index');
+
     }
 
     /**
