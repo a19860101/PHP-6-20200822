@@ -31,6 +31,7 @@ class PostController extends Controller
         return redirect(route('post.index'));
     }
     function destroy($id){
-        return $id;
+        DB::delete('DELETE FROM posts WHERE id = ?',[$id]);
+        return redirect(route('post.index'));
     }
 }
