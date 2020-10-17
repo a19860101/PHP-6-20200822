@@ -62,9 +62,13 @@ class PostController extends Controller
         // $post->title = $request->title;
         // $post->content = $request->content;
         // $post->save();
-        $ext = $request->file('cover')->getClientOriginalExtension();
-        $cover = Str::uuid().'.'.$ext;
-        $request->file('cover')->storeAs('public/images',$cover);
+        if($request->file('cover')){
+            $ext = $request->file('cover')->getClientOriginalExtension();
+            $cover = Str::uuid().'.'.$ext;
+            $request->file('cover')->storeAs('public/images',$cover);
+        }else{
+            $cover = '';
+        }
         
         //方法二
         $post = new Post;
@@ -84,7 +88,7 @@ class PostController extends Controller
         // ]);
         // Post::create($request->all());
 
-        // return redirect()->route('post.index');
+        return redirect()->route('post.index');
     }
 
     /**
