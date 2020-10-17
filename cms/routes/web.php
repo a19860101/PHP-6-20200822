@@ -55,3 +55,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //自訂登出頁面
 Route::get('logout','App\Http\Controllers\Auth\LoginController@logout');
+
+
+Route::resource('category','CategoryController');
