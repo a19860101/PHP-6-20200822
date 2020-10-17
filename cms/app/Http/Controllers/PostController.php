@@ -44,9 +44,16 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
+        // $request->file('cover') 暫存
+        // $request->file('cover')->store('images'); 上傳到 storage/app/ 檔名系統產生
+        // $request->file('cover')->store('images','public'); 上傳到 storage/app/public 檔名系統產生
+        // $request->file('cover')->storeAs('public/images','123'); 上傳到 storage/app/public/image 檔名自訂
+        // $request->file('cover')->getClientOriginalName(); 取得原始檔名
+        // $request->file('cover')->getClientOriginalExtension() 取得副檔名
+        return ;
         $request->validate([
-            'title'     => 'required | max:20',
-            'content'   => 'required'
+            // 'title'     => 'required | max:20',
+            // 'content'   => 'required'
         ]);
         //
         //方法一
@@ -56,14 +63,14 @@ class PostController extends Controller
         // $post->save();
 
         //方法二
-        $post = new Post;
-        $post->fill($request->all());
+        // $post = new Post;
+        // $post->fill($request->all());
         // $post->fill([
         //     'title' => $request->title,
         //     'content' => $request->content
         // ]);
-        $post->user_id = Auth::id();
-        $post->save();
+        // $post->user_id = Auth::id();
+        // $post->save();
 
         //方法三
         // Post::create([
@@ -72,7 +79,7 @@ class PostController extends Controller
         // ]);
         // Post::create($request->all());
 
-        return redirect()->route('post.index');
+        // return redirect()->route('post.index');
     }
 
     /**

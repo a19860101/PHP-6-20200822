@@ -15,6 +15,10 @@
                     <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}">
                 </div>
                 <div class="form-group">
+                    <label for="cover">文章封面</label>
+                    <input type="file" name="cover" id="cover">
+                </div>
+                <div class="form-group">
                     <label for="content">文章內容</label>
                     <textarea name="content" id="content" rows="10" class="form-control">{{old('content')}}</textarea>
                 </div>
