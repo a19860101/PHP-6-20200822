@@ -40,7 +40,7 @@ Route::get('/', function () {
 //     Route::get('edit/{id}','PostController@edit')->name('post.edit');
 //     Route::put('{id}','PostController@update')->name('post.update');
 // });
-Route::resource('post','PostController');
+Route::resource('post','PostController')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

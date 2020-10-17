@@ -7,6 +7,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-8 col-10">
             <h2>show #{{$post->id}} {{$post->title}}</h1>
+            <div>{{$post->user->name}}</div>
             <hr>
             <div class="py-3">
                 {!! $post->content !!}
