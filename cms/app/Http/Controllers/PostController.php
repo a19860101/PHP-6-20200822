@@ -6,6 +6,7 @@ use App\Post;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -49,8 +50,8 @@ class PostController extends Controller
         // $request->file('cover')->store('images','public'); 上傳到 storage/app/public 檔名系統產生
         // $request->file('cover')->storeAs('public/images','123'); 上傳到 storage/app/public/image 檔名自訂
         // $request->file('cover')->getClientOriginalName(); 取得原始檔名
-        // $request->file('cover')->getClientOriginalExtension() 取得副檔名
-        return ;
+        // $request->file('cover')->getClientOriginalExtension(); 取得副檔名
+        
         $request->validate([
             // 'title'     => 'required | max:20',
             // 'content'   => 'required'
@@ -61,16 +62,20 @@ class PostController extends Controller
         // $post->title = $request->title;
         // $post->content = $request->content;
         // $post->save();
-
+        $ext = $request->file('cover')->getClientOriginalExtension();
+        $cover = Str::uuid().'.'.$ext;
+        $request->file('cover')->storeAs('public/images',$cover);
+        
         //方法二
-        // $post = new Post;
-        // $post->fill($request->all());
+        $post = new Post;
+        $post->fill($request->all());
         // $post->fill([
-        //     'title' => $request->title,
-        //     'content' => $request->content
+            // 'title' => $request->title,
+            // 'content' => $request->content
         // ]);
-        // $post->user_id = Auth::id();
-        // $post->save();
+        $post->user_id = Auth::id();
+        $post->cover = $cover;
+        $post->save();
 
         //方法三
         // Post::create([
