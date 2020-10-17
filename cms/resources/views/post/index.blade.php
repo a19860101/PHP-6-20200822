@@ -4,7 +4,11 @@
     <div class="row justify-content-center">
         @foreach($posts as $post)
         <div class="col-lg-8 col-12 border my-3 py-3">
-            <img src="" alt="">
+            @if($post->cover != '')
+            <img src="{{ asset('storage/images/'.$post->cover)}}" class="w-100">
+            @else
+            <img src="https://via.placeholder.com/800x400/?text=no-pic" class="w-100">
+            @endif
             <h2>{{$post->title}}</h2>
             <hr>
             <div>
