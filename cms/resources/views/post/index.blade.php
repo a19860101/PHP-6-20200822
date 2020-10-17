@@ -13,6 +13,8 @@
                 <a href="{{route('post.show',['id'=>$post->id])}}" class="btn btn-primary">繼續閱讀</a>
             </div>
             <hr>
+            <div></div>
+            <hr>
             <div>
                 建立時間:{{$post->created_at}} <br>
                 @php Carbon\Carbon::setLocale('zh_TW') @endphp
