@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class PostController extends Controller
 {
     /**
@@ -41,6 +43,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title'     => 'required',
+            'content'   => 'required'
+        ]);
         //
         //方法一
         // $post = new Post;
@@ -55,6 +62,7 @@ class PostController extends Controller
         //     'title' => $request->title,
         //     'content' => $request->content
         // ]);
+        $post->user_id = Auth::id();
         $post->save();
 
         //方法三
