@@ -53,8 +53,8 @@ class PostController extends Controller
         // $request->file('cover')->getClientOriginalExtension(); 取得副檔名
         
         $request->validate([
-            // 'title'     => 'required | max:20',
-            // 'content'   => 'required'
+            'title'     => 'required | max:20',
+            'content'   => 'required'
         ]);
         //
         //方法一
