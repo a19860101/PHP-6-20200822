@@ -40,8 +40,18 @@ Route::get('/', function () {
 //     Route::get('edit/{id}','PostController@edit')->name('post.edit');
 //     Route::put('{id}','PostController@update')->name('post.update');
 // });
-Route::resource('post','PostController')->middleware('auth');
+// Route::resource('post','PostController')->middleware('auth');
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::resource('post','PostController')->except('index');
+});
+Route::resource('post','PostController')->only('index');
+// Route::get('post','PostController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/home', 'PostController@index')->name('index');
+
+//自訂登出頁面
+Route::get('logout','App\Http\Controllers\Auth\LoginController@logout');
