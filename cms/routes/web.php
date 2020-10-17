@@ -41,3 +41,6 @@ Route::get('/', function () {
 //     Route::put('{id}','PostController@update')->name('post.update');
 // });
 Route::resource('post','PostController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

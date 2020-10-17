@@ -9,7 +9,7 @@
             <h2>show #{{$post->id}} {{$post->title}}</h1>
             <hr>
             <div class="py-3">
-                {{$post->content}}
+                {!! $post->content !!}
             </div>
             <hr>
             <div class="pb-3">
