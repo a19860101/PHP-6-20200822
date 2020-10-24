@@ -12,8 +12,7 @@
             <h2>{{$post->title}}</h2>
             <span>分類:{{$post->category->title}}</span>
             <hr>
-            <span>分類:{{$post->toTagString()}}</span>
-            <hr>
+            
             <div>
                 {!! Str::limit(strip_tags($post->content),200) !!}
                 <br>
@@ -23,6 +22,10 @@
             <div>
                 作者: {{$post->user->name}}
             </div>
+            <hr>
+                @foreach($post->tags as $tag)
+                    <a href="#" class="badge badge-info">{{$tag->title}}</a>
+                @endforeach
             <hr>
             <div>
                 建立時間:{{$post->created_at}} <br>
