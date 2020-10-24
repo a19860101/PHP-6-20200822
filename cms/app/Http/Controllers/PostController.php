@@ -84,7 +84,7 @@ class PostController extends Controller
         $post->user_id = Auth::id();
         $post->cover = $cover;
         $post->category_id = $request->category_id;
-        // $post->save();
+        $post->save();
 
         $tags = explode(',',$request->tag);
         // dd($tags);
@@ -103,7 +103,7 @@ class PostController extends Controller
         // ]);
         // Post::create($request->all());
 
-        // return redirect()->route('post.index');
+        return redirect()->route('post.index');
     }
 
     /**

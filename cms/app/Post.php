@@ -19,4 +19,14 @@ class Post extends Model
     public function tags(){
         return $this->belongsToMany('App\Tag');
     }
+    public function toTagString(){
+        // return $this->tags;
+        $tagTitle = [];
+        foreach($this->tags as $tag){
+            $tagTitle[] = $tag->title;
+            // echo $tag->title;
+        }
+        $tagTitleString = implode(',',$tagTitle);
+        return $tagTitleString;
+    }
 }

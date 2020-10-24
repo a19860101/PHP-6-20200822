@@ -12,6 +12,8 @@
             <h2>{{$post->title}}</h2>
             <span>分類:{{$post->category->title}}</span>
             <hr>
+            <span>分類:{{$post->toTagString()}}</span>
+            <hr>
             <div>
                 {!! Str::limit(strip_tags($post->content),200) !!}
                 <br>

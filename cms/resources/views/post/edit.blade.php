@@ -3,6 +3,7 @@
 編輯文章
 @endsection
 @section('main')
+
 <div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-10">
@@ -14,6 +15,10 @@
                 <div class="form-group">
                     <label for="title">文章標題</label>
                     <input type="text" name="title" id="title" class="form-control" value="{{$post->title}}">
+                </div>
+                <div class="form-group">
+                    <label for="tag">標籤</label>
+                    <input type="text" name="tag" id="tag" class="form-control" value="{{$post->toTagString()}}">
                 </div>
                 <div class="form-group">
                     <label for="content">文章內容</label>
