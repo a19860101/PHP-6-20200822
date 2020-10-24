@@ -171,4 +171,8 @@ class PostController extends Controller
         Post::destroy($post->id);
         return redirect()->route('post.index');
     }
+
+    public function trash(){
+        return view('post.trash');
+    }
 }
