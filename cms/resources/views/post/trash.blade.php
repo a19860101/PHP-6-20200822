@@ -21,7 +21,7 @@
                             @method('delete')
                             <input type="submit" value="永久刪除" class="btn btn-danger">
                         </form>
-                        <a href="#" class="btn btn-success">還原</a>
+                        <a href="{{route('trash.restore',['id'=>$post->id])}}" class="btn btn-success">還原</a>
                     </td>
                 </tr>
                 @endforeach

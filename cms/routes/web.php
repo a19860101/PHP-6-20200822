@@ -60,3 +60,4 @@ Route::get('logout','App\Http\Controllers\Auth\LoginController@logout');
 Route::resource('category','CategoryController');
 
 Route::get('/trash','PostController@trash')->name('trash.index');
+Route::get('/trash/{id}','PostController@restore')->name('trash.restore');
