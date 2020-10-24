@@ -160,7 +160,17 @@ class PostController extends Controller
         //方法三
         $post->fill($request->all());
         $post->save();
+       
+        $post->tags()->detach();
 
+        $tags = explode(',',$request->tag);
+        foreach($tags as $tag){
+            $tagModel = Tag::firstOrCreate(['title'=>$tag]);
+            // Tag::create(['title'=>$tag]);
+            // echo $tagModel->id."<br>";
+            $post->tags()->attach($tagModel->id);
+
+        }
         return redirect()->route('post.index');
     }
 
