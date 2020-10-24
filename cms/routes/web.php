@@ -59,5 +59,12 @@ Route::get('logout','App\Http\Controllers\Auth\LoginController@logout');
 
 Route::resource('category','CategoryController');
 
-Route::get('/trash','PostController@trash')->name('trash.index');
-Route::get('/trash/{id}','PostController@restore')->name('trash.restore');
+// Route::get('/trash','PostController@trash')->name('trash.index');
+// Route::get('/trash/{id}','PostController@restore')->name('trash.restore');
+// Route::delete('/trash/{id}','PostController@delete')->name('trash.delete');
+
+Route::group(['prefix'=>'trash'],function(){
+    Route::get('/','PostController@trash')->name('trash.index');
+    Route::get('/{id}','PostController@restore')->name('trash.restore');
+    Route::delete('/{id}','PostController@delete')->name('trash.delete');
+});

@@ -16,10 +16,10 @@
                     <td>{{$post->title}}</td>
                     <td>{{$post->category->title}}</td>
                     <td>
-                        <form action="" method="post" class="d-inline-block">
+                        <form action="{{route('trash.delete',['id'=>$post->id])}}" method="post" class="d-inline-block">
                             @csrf
                             @method('delete')
-                            <input type="submit" value="永久刪除" class="btn btn-danger">
+                            <input type="submit" value="永久刪除" class="btn btn-danger" onclick="return confirm('刪除之後無法還原，確定要刪除？')">
                         </form>
                         <a href="{{route('trash.restore',['id'=>$post->id])}}" class="btn btn-success">還原</a>
                     </td>
