@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -182,7 +183,12 @@ class PostController extends Controller
         return redirect()->route('trash.index');
     }
     public function delete($id){
+        $cover = Post::onlyTrashed()->find($id)->cover;
+        // return Storage::download('public/images/'.$cover);
+        // return Storage::get('public/images/'.$cover);
+        Storage::delete('public/images/'.$cover);
         Post::onlyTrashed()->find($id)->forceDelete();
         return redirect()->route('trash.index');
+
     }
 }
