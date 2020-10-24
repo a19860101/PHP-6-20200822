@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -55,10 +56,10 @@ class PostController extends Controller
         // $request->file('cover')->getClientOriginalName(); 取得原始檔名
         // $request->file('cover')->getClientOriginalExtension(); 取得副檔名
         
-        $request->validate([
-            'title'     => 'required | max:200',
-            'content'   => 'required'
-        ]);
+        // $request->validate([
+        //     'title'     => 'required | max:200',
+        //     'content'   => 'required'
+        // ]);
         //
         //方法一
         // $post = new Post;
@@ -84,6 +85,14 @@ class PostController extends Controller
         $post->cover = $cover;
         $post->category_id = $request->category_id;
         $post->save();
+
+        $tags = explode(',',$request->tag);
+        // dd($tags);
+        foreach($tags as $tag){
+            Tag::firstOrCreate(['title'=>$tag]);
+            // Tag::create(['title'=>$tag]);
+
+        }
 
         //方法三
         // Post::create([
