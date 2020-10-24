@@ -10,6 +10,7 @@
             <img src="https://via.placeholder.com/800x400/?text=no-pic" class="w-100">
             @endif
             <h2>{{$post->title}}</h2>
+            <span>分類:{{$post->category->title}}</span>
             <hr>
             <div>
                 {!! Str::limit(strip_tags($post->content),200) !!}

@@ -55,7 +55,7 @@ class PostController extends Controller
         // $request->file('cover')->getClientOriginalExtension(); 取得副檔名
         
         $request->validate([
-            'title'     => 'required | max:20',
+            'title'     => 'required | max:200',
             'content'   => 'required'
         ]);
         //
@@ -81,6 +81,7 @@ class PostController extends Controller
         // ]);
         $post->user_id = Auth::id();
         $post->cover = $cover;
+        $post->category_id = $request->category_id;
         $post->save();
 
         //方法三
