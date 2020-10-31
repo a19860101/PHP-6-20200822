@@ -35,6 +35,9 @@
             </div>
         </div>
         @endforeach
+        <div class="col-lg-8 col-12 my-3">
+        {{$posts->links()}}
+        </div>
     </div>
 </div>
 @endsection
