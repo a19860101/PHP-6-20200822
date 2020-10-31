@@ -46,3 +46,38 @@ php artisan make:auth
 #建立storage連結
 php artisan storage:link
 ```
+
+## GIT指令
+```bash
+git config 
+git config --list
+git config --global user.name "Your Name"
+git config --global user.email "Your Email"
+
+git init 
+#資料夾git初始化
+
+git add .
+#將檔案加入暫存(索引)
+
+git commit -m "message here"
+#將檔案暫存
+
+
+git reflog
+#查看紀錄(可以看到reset)
+
+git log
+#查看紀錄(詳細)
+
+git log --oneline
+#查看紀錄(單行)
+
+git remote add origin https://github.com/xxx/xxx.git
+#建立連線
+
+git push -u origin master
+#推送到雲端儲存庫
+
+git reset --hard [版本號]
+#還原至某個版本
